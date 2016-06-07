@@ -57,12 +57,33 @@ var App = React.createClass({
         <hr />
         <List onBlur={this.onBlur} items={this.state.items} />
         <hr />
+        <Footer items={this.state.items}/>        
       </div>
     )
   }
 })
 
 
+var Footer = React.createClass({
+  render: function(){
+    var items = this.props.items
+    var sum, min, max, avg
+
+    if (items.length) {
+      sum = items.reduce( (prev, cur) => prev + cur )
+      min = Math.min(...items)
+      max = Math.max(...items)
+      avg = sum / items.length
+    }
+    return (
+      <footer>
+        Low: {min}<br />
+        Average {avg}<br />
+        High: {max}<br />
+      </footer>
+    )
+  }
+})
 
 
 
