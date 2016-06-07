@@ -3,6 +3,29 @@ var React = window.React = require('react'),
     mountNode = document.getElementById('app')
 
 
+var List = React.createClass({
+  onBlur: function(i, e){
+    var v = e.target.value
+    //var val = ReactDOM.findDOMNode(this.refs["vote"+i]).value
+    this.props.onBlur(i,v)
+  },
+  render: function(){
+    var createItems = (item, i) => {
+      var ref = "vote"+i
+      return (
+        <li>
+          <input
+            onBlur={this.onBlur.bind(this, i)}
+            defaultValue={item} />
+        </li>
+      )
+    }
+
+    return (
+      <ul>{this.props.items.map(createItems)}</ul>
+    )
+  }
+})
 
 
 var App = React.createClass({
@@ -31,6 +54,9 @@ var App = React.createClass({
       <div>
         <input name="grade" ref="grade" />
         <button onClick={this.onClick}>Add New Grade</button>
+        <hr />
+        <List onBlur={this.onBlur} items={this.state.items} />
+        <hr />
       </div>
     )
   }
