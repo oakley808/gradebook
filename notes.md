@@ -1,7 +1,4 @@
 ## Notes
-
-Don't forget to add validation to inputs
-
 Maintain state in App level component
 Make List/ListItems dumb components
 
@@ -20,3 +17,7 @@ App
 
     Footer (dumb component)
     - render
+
+## Todo
+More input validation
+Make list sortable
