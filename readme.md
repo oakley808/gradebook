@@ -2,6 +2,10 @@
 A simple gradebook app.
 The user can add, remove, and update student grades. Basic stats are calculated, and a warning highlights failing grades. Data is stored in localstorage.
 
+Try the demo https://oakley808.github.io/gradebook/
+
+![screenshot](./screenshot.jpg)
+
 ## Install
 Clone the repo, then install the node modules. Bower modules are packaged with the repo.
 
