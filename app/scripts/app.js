@@ -24,23 +24,25 @@ const List = React.createClass({
 
       return (
         <li key={item.id} className={classNames('form-inline', failing)}>
+          <a id={item.id} onClick={this.props.onDeleteGrade}  className="form-control remove" title="Delete">
+            <span className="glyphicon glyphicon-remove"></span>
+            <span className="sr-only">Remove</span>
+          </a>
+          <label><span className="sr-only">Name</span>
           <input
             name="name"
             className="form-control"
             onBlur={this.onBlur.bind(this, i)}
             defaultValue={item.name}
-            type="text" pattern=".{1,}" title="1 characters minimum" required />
+            type="text" pattern=".{1,}" title="1 characters minimum" required /></label>
+
+          <label><span className="sr-only">Grade</span>
           <input
             name="grade"
             className="form-control"
             onBlur={this.onBlur.bind(this, i)}
             defaultValue={item.grade}
-            type="number" min="0" max="100" step="1" required />
-
-          <a id={item.id} onClick={this.props.onDeleteGrade}  className="form-control remove" title="Delete">
-            <span className="glyphicon glyphicon-remove"></span>
-            <span className="sr-only">Remove</span>
-          </a>
+            type="number" min="0" max="100" step="1" required /></label>
         </li>
       )
     }
@@ -108,12 +110,15 @@ var App = React.createClass({
         <form className="form-inline form-add-new" onSubmit={this.onClick}>
           <div className="row">
             <div className="col-sm-4">
-              <input name="name" ref="name" placeholder="Enter a name" className="form-control" type="text" pattern=".{1,}" required title="1 characters minimum" />
+              <label><span className="sr-only">Name</span>
+              <input name="name" ref="name" placeholder="Enter a name" className="form-control" type="text" pattern=".{1,}" required title="1 characters minimum" /></label>
             </div>
             <div className="col-sm-8">
+              <label><span className="sr-only">Grade</span>
               <div className="input-group">
               <input name="grade" ref="grade" placeholder="Enter a grade" className="form-control" type="number" min="0" max="100" step="1" required /><span className="input-group-addon">%</span>
               </div>
+              </label>
 
               <button className="btn btn-success">Add New Grade</button>
             </div>
