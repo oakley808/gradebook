@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import classNames from 'classnames'
 import uuid from 'node-uuid'
+import LocalStorageMixin from 'react-localstorage'
 
 const FAILPOINT = 65
 
@@ -56,6 +57,9 @@ const List = React.createClass({
 
 
 var App = React.createClass({
+  mixins: [LocalStorageMixin],
+  displayName: 'Gradebook App',
+
   getInitialState() {
     return { items: [] }
   },
