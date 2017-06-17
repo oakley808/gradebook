@@ -2,7 +2,7 @@
 A simple gradebook app.
 The user can add, remove, and update student grades. Basic stats are calculated, and a warning highlights failing grades. Data is stored in localstorage.
 
-Try the demo https://oakley808.github.io/gradebook/
+Try the demo https://oakley808.github.io/react-gradebook/
 
 ![screenshot](./screenshot.jpg)
 
